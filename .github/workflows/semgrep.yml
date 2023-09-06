@@ -40,8 +40,10 @@ jobs:
     container:
       image: returntocorp/semgrep
     steps:
-    - uses: actions/checkout@v3
     - uses: actions/download-artifact@v2
       with:
         name: my-artifact
-    - run: semgrep ci
+    - name: Get Code
+      uses: actions/checkout@v3
+    - name: Scan With Semgrep
+      run: semgrep ci
