@@ -21,4 +21,6 @@ jobs:
       image: returntocorp/semgrep
     steps:
     - uses: actions/checkout@v3
+    - run: mvn clean verify
+    - run: mvn dependency:tree -DoutputFile=maven_dep_tree.txt
     - run: semgrep ci
