@@ -33,6 +33,7 @@ jobs:
         path: maven_dep_tree.txt
       
   semgrep:
+    needs: build-code
     name: semgrep/ci
     runs-on: ubuntu-latest
     env:
