@@ -24,6 +24,7 @@ jobs:
   
     - name: Build with Maven
       run: mvn clean verify
+    - name: Build Dependency Tree
       run: mvn dependency:tree -DoutputFile=maven_dep_tree.txt
 
     - uses: actions/upload-artifact@v2
